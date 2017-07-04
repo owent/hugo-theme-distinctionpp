@@ -1,0 +1,27 @@
+ul.article-tag-list {
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-left: 0 !important;
+    .article-tag-list-item {
+        display: inline-block;
+        @include border-radius($border-radius);
+        border: $article-tag-border;
+        margin: 0 0.25rem 0 0.25rem;
+        background-color: #dde;
+        padding: 0 0.4rem;
+
+        a {
+            color: rgb(51, 51, 51);
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.article-tags {
+    >label {
+        color: gray;
+    }
+}

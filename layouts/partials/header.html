@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}"><head>
+  <meta charset="utf-8" />
+  <title>{{- .Title -}} | {{- .Site.Title -}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ with .Site.Params }}{{ with .favicon }}
+  <link rel="icon" href='{{ . }}' />{{ end }}{{ with .highlightjs }}{{ if .url.style }}
+  <link rel="stylesheet" href='{{ replace (replace .url.style "%VERSION%" .version) "%STYLE%" .style }}' />
+  {{ end }}{{ end }}
+  {{ with .bootstrap }}<link rel="stylesheet" href="{{ .css }}" />{{ end }}{{ end }}
+  <link rel="stylesheet" href='{{ "css/style.css" | absURL }}' />{{ partial "google-analytics.html" . }}
+</head>

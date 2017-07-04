@@ -1,0 +1,65 @@
+home:
+  other: "Home"
+
+categories:
+  other: "Categories"
+
+search:
+  other: "Search"
+
+tags:
+  other: "Tags"
+
+tagcloud:
+  other: "Tag Cloud"
+
+tweets:
+  other: "Tweets"
+
+prev:
+  other: "Prev"
+
+next:
+  other: "Next"
+
+comment:
+  other: "Comments"
+
+archive:
+  other: "Archives"
+
+page:
+  other: "Page"
+
+recent_posts:
+  other: "Recent Posts"
+
+newer:
+  other: "Newer"
+
+older:
+  other: "Older"
+
+share:
+  other: "Share"
+
+powered_by:
+  other: "Powered by"
+
+rss_feed:
+  other: "RSS Feed"
+
+category:
+  other: "Category"
+
+tag:
+  other: "Tag"
+
+read_more:
+  other: "Read More"
+
+menu:
+  other: "Menu"
+
+theme:
+  other: "Theme"

@@ -6,10 +6,14 @@ license: "MIT"
 licenselink: "https://github.com/owt5008137/hugo-theme-distinctionpp/blob/master/LICENSE.md"
 description: "Distinctionpp theme for hugo"
 homepage: "https://github.com/owt5008137/hugo-theme-distinctionpp"
-tags = []
-features = []
-min_version = "0.22.1"
+tags:
+  - hugo
+  - theme
+  - distinctionpp
+features:
+  - highlightjs
+min_version: "0.22.1"
 
-[author]
-  name = "OWenT"
-  homepage = "https://owent.net"
+author:
+  name: "OWenT"
+  homepage: "https://owent.net"
