@@ -1,2 +1,13 @@
-{{ partial "html-before-content.html" . }}
-{{ partial "html-after-content.html" . }}
+{{ define "main-content" }}
+<article id="{{ .Type }}-{{ .UniqueID }}" class="article-panel article article-type-{{ .Type }}" itemscope itemprop="404">
+  <div class="article-panel-inner article-inner">
+    <div class="article-inner">
+      <div class="article-entry" itemprop="articleBody">
+        ============================= archives =============================
+      </div>
+      <hr />
+    </div>
+    <hr />
+  </div>
+</article>
+{{ end }}

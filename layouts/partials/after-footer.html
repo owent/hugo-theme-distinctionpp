@@ -1,0 +1,51 @@
+<script type="text/javascript" src='{{ $.Site.Params.jquery.js | default "//code.jquery.com/jquery-3.2.1.min.js" | safeURL }}'></script>
+<script type="text/javascript" src='{{ $.Site.Params.jquery.migrate | default "//code.jquery.com/jquery-migrate-1.4.1.min.js" | safeURL }}'></script>
+<script type="text/javascript" src='{{ $.Site.Params.bootstrap.tether.js | default "//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" | safeURL }}'></script>
+<script type="text/javascript" src='{{ $.Site.Params.bootstrap.js | default "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" | safeURL }}'></script>
+{{ with $.Site.Params.highlightjs }}
+<!-- highlight.js begin -->
+<script type="text/javascript" src='{{ replace (default "//cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/highlight.min.js" .url.js) "%VERSION%" .version | safeURL  }}'></script>
+{{ range $lang := .langs }}
+<script type="text/javascript" src='{{ replace (replace (default "//cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/languages/%LANG%.min.js" $.Site.Params.highlightjs.url.lang) "%VERSION%" $.Site.Params.highlightjs.version) "%LANG%" $lang | safeURL  }}'></script>{{ end }}
+<script type="text/javascript">
+jQuery(function (){
+    jQuery("head").append('<link rel="stylesheet" href="{{ replace (replace (default "//cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/styles/%STYLE%.min.css" .url.style) "%VERSION%" .version) "%STYLE%" .style | safeURL  }}" />');
+    if (window.JSON) {
+        hljs.configure(JSON.parse({{ .options | jsonify }}));
+    } else {
+        hljs.configure(evel({{ .options | jsonify }}));
+    }
+    jQuery('{{ .selector | default "pre>code" }}').each(function(i, block) {
+        try {
+        hljs.highlightBlock(block);
+        } catch (e) {
+            if (window.console) {
+                console.log(e.toString() + "\r\nMaybe can not detect the language");
+            }
+        }
+    });
+});
+</script>
+<!-- highlight.js end -->
+{{ end }}{{ with $.Site.Params.gitment }}
+  <!-- gitment begin -->
+  <script type="text/javascript" src='{{ .js | default "//imsun.github.io/gitment/dist/gitment.browser.js" | safeURL }}'></script>
+  <script type="text/javascript">
+    jQuery(function(){
+      jQuery("head").append('<link rel="stylesheet" href="{{ .css | default "//imsun.github.io/gitment/style/default.css" | safeURL }}" />');
+      const gitment = new Gitment({
+        owner: '{{ .owner | safeJS }}',
+        repo: '{{ .repo | safeJS }}',
+        oauth: {
+          client_id: '{{ .oauth.client_id | safeJS }}',
+          client_secret: '{{ .oauth.client_secret | safeJS }}',
+        },
+        // ...
+        // For more available options, check out the documentation below
+      })
+
+      gitment.render(document.getElementById('gitment_thread'))
+    });
+  </script>
+  <!-- gitment end -->
+{{ end }}{{ partial "google-analytics.html" . }}

@@ -1,14 +1,41 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}"><head>
-  <meta charset="utf-8" />
-  <title>{{- .Title -}} | {{- .Site.Title -}}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-  {{ with .Site.Params }}{{ with .favicon }}
-  <link rel="icon" href='{{ . }}' />{{ end }}{{ with .highlightjs }}{{ if .url.style }}
-  <link rel="stylesheet" href='{{ replace (replace .url.style "%VERSION%" .version) "%STYLE%" .style }}' />
-  {{ end }}{{ end }}
-  {{ with .bootstrap }}<link rel="stylesheet" href="{{ .css }}" />{{ end }}{{ end }}
-  <link rel="stylesheet" href='{{ "css/style.css" | absURL }}' />{{ partial "google-analytics.html" . }}
-</head>
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer">
+    <div id="header-title">
+      <h1 id="site-title">
+        <a href="{{ $.Site.BaseURL }}" id="logo">{{- $.Site.Title -}}</a>
+      </h1>
+      {{ if $.Site.Params.Description }}
+      <h2 id="site-description">{{- $.Site.Params.Description -}}</h2>
+      {{ end }}
+    </div>
+    <div id="header-inner">
+      <nav id="main-nav" class="navbar navbar-inverse navbar-toggleable-md bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav-links" aria-controls="main-nav-links" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <span id="main-nav-brand" class="navbar-brand collapse" href="{{ $.Site.BaseURL }}">#</span>
+        <div class="collapse navbar-collapse" id="main-nav-links">
+          <ul class="navbar-nav mr-auto">
+            {{ if $.Site.Menus.main }}
+              {{ range $.Site.Menus.main }}
+                <li class="nav-item"><a class="nav-link" href="{{ .URL }}" title='{{ .Name }}'>{{ .Name }}</a></li>
+              {{ end }}
+            {{ else }}
+                <li class="nav-item"><a class="nav-link" href="{{ $.Site.BaseURL }}" title='{{ i18n "home" }}'>{{ i18n "home" }}</a></li>
+                <li class="nav-item"><a class="nav-link" href='{{ $.Site.BaseURL }}/archive' title='{{ i18n "archive" }}'>{{ i18n "archive" }}</a></li>
+            {{ end }}
+            <li class="nav-item"><a id="nav-rss-link" class="nav-link" href="{{ $.Site.RSSLink }}" title='{{ i18n "rss_feed" }}'>{{ i18n "rss_feed" }}</a></li>
+          </ul>
+          {{ with $.Site.Params.Search }}
+          <form class="form-inline" method="get" accept-charset="UTF-8" action='{{- index . "Url" | default "//google.com/search" -}}'>
+            <input type="hidden" name="sitesearch" value='{{ replaceRE "^[^:]*://([^/:]+).*" "$1" $.Site.BaseURL }}' />
+            <input class="form-control" type="text" placeholder='{{ i18n "search" }}' name='{{- index . "Url" | default "q" -}}' />
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">{{ i18n "search" }}</button>
+          </form>
+          {{ end }}
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
