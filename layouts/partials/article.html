@@ -1,7 +1,7 @@
 <article id="{{ .Type }}-{{ .UniqueID }}" class="article-panel article article-type-{{ .Type }}" itemscope itemprop="blogPost">
   <div class="article-panel-inner article-inner">
     <div class="article-inner">
-      <header class="article-header">{{ .Title }}</header><hr />
+      <header class="article-header">{{ partial "post/title.html" . }}</header><hr />
       <div class="article-entry" itemprop="articleBody">{{ .Content }}</div>
       <hr />
       <footer class="article-footer">
