@@ -1,65 +1,44 @@
-home:
-  other: "Home"
-
-categories:
-  other: "Categories"
-
-search:
-  other: "Search"
-
-tags:
-  other: "Tags"
-
-tagcloud:
-  other: "Tag Cloud"
-
-tweets:
-  other: "Tweets"
-
-prev:
-  other: "Prev"
-
-next:
-  other: "Next"
-
-comment:
-  other: "Comments"
-
-archive:
-  other: "Archives"
-
-page:
-  other: "Page"
-
-recent_posts:
-  other: "Recent Posts"
-
-newer:
-  other: "Newer"
-
-older:
-  other: "Older"
-
-share:
-  other: "Share"
-
-powered_by:
-  other: "Powered by"
-
-rss_feed:
-  other: "RSS Feed"
-
-category:
-  other: "Category"
-
-tag:
-  other: "Tag"
-
-read_more:
-  other: "Read More"
-
-menu:
-  other: "Menu"
-
-theme:
-  other: "Theme"
+- id: home
+  translation: "Home"
+- id: categories
+  translation: "Categories"
+- id: search
+  translation: "Search"
+- id: tags
+  translation: "Tags"
+- id: tagcloud
+  translation: "Tag Cloud"
+- id: tweets
+  translation: "Tweets"
+- id: prev
+  translation: "Previous"
+- id: next
+  translation: "Next"
+- id: comment
+  translation: "Comment"
+- id: archive
+  translation: "Archive"
+- id: page
+  translation: "Page"
+- id: recentPosts
+  translation: "Recently Posts"
+- id: newer
+  translation: "Newer"
+- id: older
+  translation: "Older"
+- id: share
+  translation: "Share"
+- id: powered_by
+  translation: "Powered by"
+- id: rssFeed
+  translation: "RSS Feed"
+- id: category
+  translation: "Category"
+- id: tag
+  translation: "Tag"
+- id: readMore
+  translation: "Read More"
+- id: menu
+  translation: "Menu"
+- id: theme
+  translation: "Theme"
