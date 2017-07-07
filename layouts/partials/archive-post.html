@@ -3,6 +3,6 @@
     <header class="article-header archive-article-title">{{ partial "post/title.html" . }}</header>
     <div class="article-excerpt">{{ .Summary }}</div>
     <div class="article-more"><a href="{{ .Permalink }}" target="_blank" itemprop="url">{{ T "readMore" }}</a></div>
-    <div class="article-panel-footer archive-article-footer">{{ partial "post/date.html" }}</div>
+    <div class="article-panel-footer archive-article-footer">{{ partial "post/date.html" . }}</div>
   </div>
 </article>

@@ -23,9 +23,9 @@
               {{ end }}
             {{ else }}
                 <li class="nav-item"><a class="nav-link" href="{{ $.Site.BaseURL }}" title='{{ i18n "home" }}'>{{ i18n "home" }}</a></li>
-                <li class="nav-item"><a class="nav-link" href='{{ $.Site.BaseURL }}/archive' title='{{ i18n "archive" }}'>{{ i18n "archive" }}</a></li>
+                <li class="nav-item"><a class="nav-link" href='{{ $.Site.BaseURL }}/archives/' title='{{ i18n "archives" }}'>{{ i18n "archives" }}</a></li>
             {{ end }}
-            <li class="nav-item"><a id="nav-rss-link" class="nav-link" href="{{ $.Site.RSSLink }}" title='{{ i18n "rss_feed" }}'>{{ i18n "rss_feed" }}</a></li>
+            <li class="nav-item"><a id="nav-rss-link" class="nav-link" href="{{ $.Site.RSSLink }}" title='{{ i18n "rssFeed" }}'>{{ i18n "rssFeed" }}</a></li>
           </ul>
           {{ with $.Site.Params.Search }}
           <form class="form-inline" method="get" accept-charset="UTF-8" action='{{- index . "Url" | default "//google.com/search" -}}'>

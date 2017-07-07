@@ -2,6 +2,7 @@
   <div class="article-panel-inner article-inner">
     <div class="article-inner">
       <header class="article-header">{{ partial "post/title.html" . }}</header><hr />
+      <div id="toc" class="well toc">{{ .TableOfContents }}</div><br />
       <div class="article-entry" itemprop="articleBody">{{ .Content }}</div>
       <hr />
       <footer class="article-footer">
@@ -14,6 +15,7 @@
         {{ partial "post/tag.html" . }}
       </footer>
     </div>
+    {{ partial "post/nav.html" . }}
     {{ partial "comments.html" . }}
   </div>
 </article>

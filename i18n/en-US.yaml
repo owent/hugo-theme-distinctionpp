@@ -16,8 +16,8 @@
   translation: "Next"
 - id: comment
   translation: "Comment"
-- id: archive
-  translation: "Archive"
+- id: archives
+  translation: "Archives"
 - id: page
   translation: "Page"
 - id: recentPosts
