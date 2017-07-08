@@ -21,6 +21,10 @@
     border: $article-tag-border;
     @include border-radius($border-radius-lg);
     padding: 1rem;
+
+    .widget-title {
+        border-bottom: $article-toc-border;
+    }
 }
 
 .widget-list-inline {

@@ -1,13 +1,14 @@
-{{ define "main-content" }}
-<article id="{{ .Type }}-{{ .UniqueID }}" class="article-panel article-page article-type-{{ .Type }}" itemscope itemprop="404">
+{{ define "main-content" }}<div id="archive-page-content">
+<article class="article-panel article-page" itemscope itemprop="blogPost">
   <div class="article-panel-inner article-inner">
     <div class="article-inner">
-      <div class="article-entry" itemprop="articleBody">
-        ============================= archives =============================
-      </div>
+      <div class=float-left>{{ partial "widget/recent-posts.html" . }}</div>
+      <div class=float-right>{{ partial "widget/category.html" . }}</div>
+      <div class="clearfix"></div>
       <hr />
+      {{ partial "widget/tagcloud.html" . }}
     </div>
-    <hr />
   </div>
 </article>
+</div>
 {{ end }}

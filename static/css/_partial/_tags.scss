@@ -25,3 +25,17 @@ ul.article-tag-list {
         color: gray;
     }
 }
+
+ul.article-tagcloud-list {
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-left: 0 !important;
+    .article-tagcloud-list-item {
+        display: inline-block;
+        margin: 0.15rem;
+        padding: 0 0.4rem;
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}

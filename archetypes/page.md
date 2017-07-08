@@ -4,8 +4,8 @@ title: "My Page Title"
 id: 0
 draft: true
 author: owent
-tags:
-categories: 
+tags: []
+categories: []
 date: ""
 ---
 
