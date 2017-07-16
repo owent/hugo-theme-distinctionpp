@@ -28,9 +28,9 @@
             <li class="nav-item"><a id="nav-rss-link" class="nav-link" href="{{ $.Site.RSSLink }}" title='{{ i18n "rssFeed" }}'>{{ i18n "rssFeed" }}</a></li>
           </ul>
           {{ with $.Site.Params.Search }}
-          <form class="form-inline" method="get" accept-charset="UTF-8" action='{{- index . "Url" | default "//google.com/search" -}}'>
-            <input type="hidden" name="sitesearch" value='{{ replaceRE "^[^:]*://([^/:]+).*" "$1" $.Site.BaseURL }}' />
-            <input class="form-control" type="text" placeholder='{{ i18n "search" }}' name='{{- index . "Url" | default "q" -}}' />
+          <form class="form-inline" method="get" accept-charset="UTF-8" action='{{ index . "url" | default "//google.com/search" | safeHTMLAttr }}'>
+            <input type="hidden" name='{{ index . "sitename" | default "sitesearch" | safeHTMLAttr}}' value='{{ index . "siteprefix" | default "" | safeHTMLAttr }}{{ replaceRE "^[^:/]*:?//([^/:]+).*" "$1" $.Site.BaseURL | safeHTMLAttr }}' />
+            <input class="form-control" type="text" placeholder='{{ i18n "search" }}' name='{{ index . "keywork" | default "q" | safeHTMLAttr }}' />
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">{{ i18n "search" }}</button>
           </form>
           {{ end }}
