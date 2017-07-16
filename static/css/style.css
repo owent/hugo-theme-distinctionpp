@@ -210,11 +210,15 @@ table {
   color: #7b7d83; }
 
 .article-more a {
-  color: darkgreen;
-  font-weight: bolder; }
+  color: #2280dd;
+  font-size: 0.8rem;
+  /*font-weight: bolder;*/ }
 
 .article-more a:hover {
   text-decoration: none; }
+
+.article-more a::after {
+  content: "»"; }
 
 .article-panel {
   transition: all 0.5s ease-in-out;
@@ -236,21 +240,18 @@ table {
     .article-panel .article-panel-inner ul, .article-panel .article-panel-inner ol {
       margin-left: 2rem; }
     .article-panel .article-panel-inner .article-panel-footer {
-      background: #ccc;
-      border: 0.05rem solid #666;
-      border-radius: 0.2rem;
-      -webkit-border-radius: 0.2rem;
-      -moz-border-radius: 0.2rem;
-      box-shadow: inset 0.05em 0.05em 0.25em #484848;
-      -webkit-box-shadow: inset 0.05em 0.05em 0.25em #484848;
-      -moz-box-shadow: inset 0.05em 0.05em 0.25em #484848;
+      background: #ddd;
+      /* border: $article-footer-border; */
+      /* @include border-radius($border-radius-sm); */
+      /* @include box-shadow(inset 0.05em 0.05em 0.25em rgb(72,72,72)); */
       font-size: 0.8rem;
-      font-weight: bold;
+      /* font-weight: bold; */
       margin-bottom: 0.25rem;
       overflow: hidden;
       padding: 0.15rem 0.4rem;
-      text-shadow: 0 0 0.05rem #000;
-      text-align: right; }
+      /* text-shadow: 0 0 0.05rem #000; */
+      text-align: right;
+      color: #666; }
       .article-panel .article-panel-inner .article-panel-footer a {
         color: #000; }
       .article-panel .article-panel-inner .article-panel-footer a:hover {
@@ -289,14 +290,16 @@ ul.article-tag-list {
     border-radius: 0.25rem;
     -webkit-border-radius: 0.25rem;
     -moz-border-radius: 0.25rem;
-    border: 0.05rem solid #666;
-    margin: 0 0.25rem 0 0.25rem;
-    background-color: #dde;
-    padding: 0 0.4rem; }
+    /* border: $article-tag-border; */
+    margin: 0 0.25rem 0 0rem;
+    background-color: #ddd;
+    padding: 0 0.5rem; }
     ul.article-tag-list .article-tag-list-item a {
-      color: #333333; }
+      color: #2386f6; }
     ul.article-tag-list .article-tag-list-item a:hover {
       text-decoration: none; }
+  ul.article-tag-list .article-tag-list-item:hover {
+    background-color: #ddf; }
 
 .article-tags > label {
   color: gray; }
