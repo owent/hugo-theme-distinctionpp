@@ -6,8 +6,8 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <link href="{{ $.Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
   {{ with $.Site.Params }}{{ with .favicon }}<link rel="icon" href='{{ . }}' />{{ end }}{{ end }}
-{{ $bootstrap_css := "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" }}
-{{ $bootstrap_tether_css := "//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css" }}
+{{ $bootstrap_css := "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" }}
+{{ $bootstrap_tether_css := "//cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/css/tether.min.css" }}
 {{ if $.Site.Params.bootstrap }}
   <link rel="stylesheet" href='{{ $.Site.Params.bootstrap.css | default $bootstrap_css | safeURL }}' />
   {{ if $.Site.Params.bootstrap.tether }}
