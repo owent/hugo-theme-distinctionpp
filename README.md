@@ -12,11 +12,11 @@ Distinctionpp theme for [Hexo].
 $ git clone -b master https://github.com/owt5008137/hugo-theme-distinctionpp.git themes/distinctionpp
 ```
 
-**Distinctionpp requires Hexo 2.4 and above.**
+**Distinctionpp requires Hugo 1.5 and above.**
 
 ### Enable
 
-Modify `theme` setting in `_config.yml` to `distinctionpp`.
+Modify `theme` setting in `config.yaml` to `distinctionpp`.
 
 ### Update
 
@@ -27,94 +27,81 @@ git pull
 
 ## Configuration
 
-``` yml
-# Header
+```yml
+
+params:
+  description: "Chanllege Everything"
+  author: "OWenT"
+  githubuser: "owt5008137"
+  favicon: /favicon.ico
+  ugly: ".html"
+  search:
+    url: //www.bing.com/search
+    keywork: q
+    sitename: q1
+    siteprefix: "site:"
+  bootstrap:
+    js: //maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js
+    css: //maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css
+    popper:
+      js: //cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
+  highlightjs:
+    style: "vs2015"      # style name
+    langs: ['capnproto', 'cmake', 'd', 'dos', 'erlang', 'go', 'less', 'lua', 'php', 'powershell', 'protobuf', 'profile', 'typescript', 'vim']
+    selector: 'pre>code'
+    version: '9.12.0'
+    url:                  # 
+      js: //cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/highlight.min.js
+      style: //cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/styles/%STYLE%.min.css
+      lang: //cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/languages/%LANG%.min.js
+    options:              # options of highlight.js see http://highlightjs.readthedocs.io/en/latest/api.html#configure-options
+      tabReplace: '    '
+      useBR: false
+      #classPrefix: 'hljs-'
+      languages: {}   # language alias
+  katex:
+    js: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js
+    css: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css
+    autorender: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/contrib/auto-render.min.js
+  mathjax:
+    # js: //cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    # js: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  jquery:
+    js: //code.jquery.com/jquery-3.2.1.slim.min.js
+    migrate: //code.jquery.com/jquery-migrate-1.4.1.min.js
+
 menu:
-  Home: /
-  Archives: /archives
-rss: /atom.xml
+  main:
+    - Name: "Home"
+      Weight: 1
+      Identifier: "home"
+      URL: "/"
+    - Name: "Archives"
+      Weight: 2
+      Identifier: "archives"
+      URL: "/archives.html"
+    - Name: "About"
+      Weight: 3
+      Identifier: "about"
+      URL: "/about.html"
 
-# Content
-excerpt_link: Read More
-fancybox: true
+author:
+    name: "OWenT"
+    email: "admin@owent.net"
 
-highlight:
-  enable: false         # set false to use highlight.js in client mode
-  style: "default"      # style name
-  langs: ['capnproto', 'cmake', 'd', 'dos', 'erlang', 'go', 'less', 'lua', 'php', 'powershell', 'protobuf', 'profile', 'typescript', 'vim'] # extend languages
-  selector: 'pre>code'  # How to find code
-  url:                  # Where to import highlight.js, all configure in highlight are available
-    js: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/<%- version %>/highlight.min.js"
-    style: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/<%- version %>/styles/<%- style %>.min.css"
-    lang: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/<%- version %>/languages/<%- lang %>.min.js" # for (let lang of langs) 
-  options:              # options of highlight.js see http://highlightjs.readthedocs.io/en/latest/api.html#configure-options
-    tabReplace: '    '
-    useBR: false
-    #classPrefix: 'hljs-'
-    languages: {}   # language alias
+taxonomies:
+  tag: "tags"
+  category: "categories"
 
-widgets:
-- category
-- tag
-- tagcloud
-- archives
-- recent_posts
-
-# Miscellaneous
-google_analytics:
-favicon: /favicon.png
-
-# where to import jquery
-jquery:
-  js: //code.jquery.com/jquery-3.2.1.min.js
-  migrate: //code.jquery.com/jquery-migrate-1.4.1.min.js
-
-# where to import bootstrap
-bootstrap:
-  js: //cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js
-  css: //cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css
-
-# where to import fancybox
-fancybox:
-  enable: true
-  js: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js
-  css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css
-
-disqus_shortname:     # disqus shortname for inserting comments
-disqus_on_page: false # if insert disqus in pages
-
-gitment: # use https://github.com/imsun/gitment for comments
-  enable_on_page: false
-  js: https://imsun.github.io/gitment/dist/gitment.browser.js
-  css: https://imsun.github.io/gitment/style/default.css
-  owner: owent
-  repo: 'blog-comment'
-  oauth:
-    client_id: 
-    client_secret: 
-```
-
-- **menu** - Navigation menu
-- **rss** - RSS link
-- **excerpt_link** - "Read More" link at the bottom of excerpted articles. `false` to hide the link.
-- **fancybox** - Enable [Fancybox]
-- **widgets** - Widgets displaying in archives
-- **google_analytics** - Google Analytics ID
-- **favicon** - Favicon path
-
-## Features
-
-### Fancybox
-
-Distinctionpp uses [Fancybox] to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.
-
-```
-![img caption](img url)
-
-{% fancybox img_url [img_thumbnail] [img_caption] %}
+DisqusShortname: owent
+googleAnalytics: "UA-19298704-1"
 ```
 
 All of them are enabled by default. You can edit them in `widget` setting.
 
 ## Development
 
+Generate css files:
+```bash
+sassc -t compressed -m static/css/style.scss static/css/style.css
+```
