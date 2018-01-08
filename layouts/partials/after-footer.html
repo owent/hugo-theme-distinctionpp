@@ -31,9 +31,9 @@
 {{ end }}
 {{ with $.Site.Params.highlightjs }}
 <!-- highlight.js begin -->
-<script type="text/javascript" src='{{ replace (default $default_highlightjs_js .url.js) "%VERSION%" .version | safeURL  }}' crossorigin="anonymous"></script>
+<script type="text/javascript" src='{{ replace (default $default_highlightjs_js .url.js) "%VERSION%" .version | safeURL  }}'></script>
 {{ range $lang := .langs }}
-<script type="text/javascript" src='{{ replace (replace (default $default_highlightjs_lang $.Site.Params.highlightjs.url.lang) "%VERSION%" $.Site.Params.highlightjs.version) "%LANG%" $lang | safeURL  }}' crossorigin="anonymous"></script>{{ end }}
+<script type="text/javascript" src='{{ replace (replace (default $default_highlightjs_lang $.Site.Params.highlightjs.url.lang) "%VERSION%" $.Site.Params.highlightjs.version) "%LANG%" $lang | safeURL  }}'></script>{{ end }}
 <script type="text/javascript">
 jQuery(function (){
     jQuery("head").append('<link rel="stylesheet" href="{{ replace (replace (default $default_highlightjs_css .url.style) "%VERSION%" .version) "%STYLE%" .style | safeURL  }}" />');
@@ -56,7 +56,7 @@ jQuery(function (){
 <!-- highlight.js end -->
 {{ end }}{{ with $.Site.Params.gitment }}
 <!-- gitment begin -->
-<script type="text/javascript" src='{{ .js | default $default_gitment_js | safeURL }}' crossorigin="anonymous"></script>
+<script type="text/javascript" src='{{ .js | default $default_gitment_js | safeURL }}'></script>
 <script type="text/javascript">
 jQuery(function(){
     jQuery("head").append('<link rel="stylesheet" href="{{ .css | default $default_gitment_css | safeURL }}" />');
@@ -100,11 +100,11 @@ MathJax.Hub.Queue(function() {
     jQuery(MathJax.Hub.getAllJax()).parent().addClass('has-jax');
 });
 </script>
-<script type="text/javascript" async src='{{ .js | default $default_mathjax_js | safeURL }}' crossorigin="anonymous"></script>
+<script type="text/javascript" async src='{{ .js | default $default_mathjax_js | safeURL }}'></script>
 <!-- mathjax end -->{{ end }}
 {{ with $.Site.Params.katex }}<!-- katex begin -->
-<script type="text/javascript" src='{{ .js | default $default_katex_js | safeURL }}' crossorigin="anonymous"></script>
-<script type="text/javascript" src='{{ .autorender | default $default_katex_autorender | safeURL }}' crossorigin="anonymous"></script>
+<script type="text/javascript" src='{{ .js | default $default_katex_js | safeURL }}'></script>
+<script type="text/javascript" src='{{ .autorender | default $default_katex_autorender | safeURL }}'></script>
 <script type="text/javascript">
 jQuery(function(){
     jQuery("head").append('<link rel="stylesheet" href="{{ .css | default $default_katex_css | safeURL }}" />');
