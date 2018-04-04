@@ -1,16 +1,16 @@
-{{ $default_jquery_js := "//code.jquery.com/jquery-3.2.1.slim.min.js" }}
-{{ $default_jquery_migrate := "//code.jquery.com/jquery-migrate-1.4.1.min.js" }}
-{{ $default_bootstrap_js := "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" }}
-{{ $default_bootstrap_popper_js := "//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" }}
+{{ $default_jquery_js := "//code.jquery.com/jquery-3.3.1.slim.min.js" }}
+{{ $default_jquery_migrate := "//code.jquery.com/jquery-migrate-3.0.1.min.js" }}
+{{ $default_bootstrap_js := "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" }}
+{{ $default_bootstrap_popper_js := "//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.2/umd/popper.min.js" }}
 {{ $default_highlightjs_js := "//cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/highlight.min.js" }}
 {{ $default_highlightjs_css := "//cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/styles/%STYLE%.min.css" }}
 {{ $default_highlightjs_lang := "//cdnjs.cloudflare.com/ajax/libs/highlight.js/%VERSION%/languages/%LANG%.min.js" }}
 {{ $default_gitment_js := "//imsun.github.io/gitment/dist/gitment.browser.js" }}
 {{ $default_gitment_css := "//imsun.github.io/gitment/style/default.css" }}
-{{ $default_mathjax_js := "//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML" }}
-{{ $default_katex_js := "///cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js" }}
-{{ $default_katex_css := "//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css" }}
-{{ $default_katex_autorender := "//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/contrib/auto-render.min.js" }}
+{{ $default_mathjax_js := "//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" }}
+{{ $default_katex_js := "///cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" }}
+{{ $default_katex_css := "//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" }}
+{{ $default_katex_autorender := "//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js" }}
 {{ if $.Site.Params.jquery }}
 <script type="text/javascript" src='{{ $.Site.Params.jquery.js | default $default_jquery_js | safeURL }}' crossorigin="anonymous"></script>
 <!--<script type="text/javascript" src='{{ $.Site.Params.jquery.migrate | default $default_jquery_migrate | safeURL }}'></script>-->
