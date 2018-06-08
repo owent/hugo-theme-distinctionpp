@@ -69,6 +69,8 @@ params:
   jquery:
     js: //cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js
     migrate: //cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js
+  chartjs:
+    js: //cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js
 
 menu:
   main:
@@ -98,6 +100,40 @@ googleAnalytics: "UA-19298704-1"
 ```
 
 All of them are enabled by default. You can edit them in `widget` setting.
+
+## shortcodes
+
+### chart
+See http://www.chartjs.org for more detail
+```
+{{< chart id="ID" style="css styles canvas" class="class of canvas" alt="text before rended" >}}
+// json options of [chartjs](http://www.chartjs.org), for example
+{
+  "type": "bar",
+  "data": {
+  "labels": [ "A", "B", "C" ],
+  "datasets": [
+    {
+    "label": "bar chart",
+    "data": [ 1, 2, 3 ],
+    "backgroundColor": [
+      "rgba(255, 99, 132, 0.2)",
+      "rgba(54, 162, 235, 0.2)",
+      "rgba(255, 206, 86, 0.2)"
+    ],
+    "borderColor": [
+      "rgba(255,99,132,1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(255, 206, 86, 1)"
+    ],
+    "borderWidth": 1
+    }
+  ]
+  },
+  "options": {}
+}
+{{< /chart >}}
+```
 
 ## Development
 

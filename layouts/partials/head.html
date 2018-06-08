@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode }}"><head>
+{{ $default_jquery_js := "//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js" }}
+{{ $default_jquery_migrate := "//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js" }}
   <meta charset="utf-8" />
   <title>{{- .Title -}} | {{- $.Site.Title -}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,4 +15,12 @@
   <link rel="stylesheet" href='{{ $bootstrap_css }}' crossorigin="anonymous" />
 {{ end }}
   <link rel="stylesheet" href='{{ $.Site.BaseURL }}/css/style.css' />
+
+{{ if $.Site.Params.jquery }}
+<script type="text/javascript" src='{{ $.Site.Params.jquery.js | default $default_jquery_js | safeURL }}' crossorigin="anonymous"></script>
+<!--<script type="text/javascript" src='{{ $.Site.Params.jquery.migrate | default $default_jquery_migrate | safeURL }}'></script>-->
+{{ else }}
+<script type="text/javascript" src='{{ $default_jquery_js }}' crossorigin="anonymous"></script>
+<!--<script type="text/javascript" src='{{ $default_jquery_migrate }}'></script>-->
+{{ end }}
 </head>
